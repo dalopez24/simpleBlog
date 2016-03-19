@@ -1,0 +1,83 @@
+﻿@model simpleBlog.WebUI.Areas.Admin.ViewModel.PostViewModel
+@{
+    ViewBag.Title = "Post" ;
+}
+
+<h1>@(Model.isNew ? "Create post" : "Update post")</h1>
+
+@using (Html.BeginForm("postForm", "Posts"))
+{
+   
+    if (!Model.isNew) 
+    {
+        @Html.HiddenFor(f => f.PostId)
+    }
+    else
+    {
+        @Html.HiddenFor(f => f.isNew)
+    }
+
+
+    <div class="row">
+            <div class="col-lg-8">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.Title,"", new {@class ="text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Slug)
+                    @Html.TextBoxFor(model => model.Slug, new { @class = "form-control", data_slug = "#Title" })
+                    @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Content)
+                    @Html.TextAreaFor(model => model.Content, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Post Actions
+                    </div>
+                    <div class="panel-body">
+                        <input type="submit" value="@(Model.isNew? "Publish" : "Update")" class="btn btn-success btn-sm" />  | <a href="@Url.Action("Index")">Cancel</a>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Tags</div>
+                    <div class="panel-body post-tag-editor">
+                        <label for="new-tag-name"> New Tag:</label>
+                        <div class="input-group">
+                            <input id="new-tag-name"  type="text" class="new-tag-name form-control"/>
+                            <span class="input-group-btn">
+                                <button disabled class="btn btn-primary add-tag-button">Add</button>
+                            </span>
+                        </div>
+
+                        <ul class="tag-select">
+                            <li data-tag-id="" class="template">
+                                <a href="#" class="name"></a>
+                                <input type="hidden" class="name-input" />
+                                <input type="hidden" class="selected-input" />
+                            </li>
+
+                            @for(var i = 0;  i < Model.Tags.Count; i++)
+                            {
+                                var tag = Model.Tags[i];
+
+                                <li data-tag-id="@tag.TagId" class="@(tag.isChecked? "selected" : "")">
+                                    <a href="#">@tag.Name</a>
+
+                                    <input type="hidden" name="Tags[@(i)].TagId" value="@tag.TagId" />
+                                    <input type="hidden" name="Tags[@(i)].Name" value="@tag.Name" />
+                                    <input type="hidden" name="Tags[@(i)].isChecked" value="@tag.isChecked.ToString()" class="selected-input" />
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+}

@@ -1,0 +1,4 @@
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Contracts\bin\Debug\simpleBlog.Contracts.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Contracts\bin\Debug\simpleBlog.Contracts.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Contracts\obj\Debug\simpleBlog.Contracts.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Contracts\obj\Debug\simpleBlog.Contracts.pdb

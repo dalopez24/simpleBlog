@@ -1,0 +1,62 @@
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<simpleBlog.Model.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Actions
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roles.Name)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Users", new {id = item.UserId})" class="btn btn-primary">
+                        Edit
+                        <i class="glyphicon glyphicon-edit "></i>
+                    </a>
+                    <a href="@Url.Action("Details", "Users", new {id = item.UserId})" class="btn btn-default">
+                        Details
+                        <i class="glyphicon glyphicon-lock "></i>
+                    </a>
+
+                    <a href="@Url.Action("Delete", "Users", new {id = item.UserId})" class="btn btn-danger delete-user">
+                        Remove
+                        <i class="glyphicon glyphicon-remove "></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

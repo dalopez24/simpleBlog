@@ -1,0 +1,7 @@
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\bin\Debug\simpleBlog.Model.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\bin\Debug\simpleBlog.Model.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\bin\Debug\BCrypt.Net.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\bin\Debug\BCrypt.Net.pdb
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\bin\Debug\BCrypt.Net.xml
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\obj\Debug\simpleBlog.Model.dll
+C:\Users\Daniel\Documents\Visual Studio 2015\Projects\simpleBlog\simpleBlog.Model\obj\Debug\simpleBlog.Model.pdb
